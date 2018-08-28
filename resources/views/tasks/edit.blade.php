@@ -5,6 +5,9 @@
     <h1>id: {{ $task->id }} のメッセージ編集ページ</h1>
 
     {!! Form::model($task, ['route' => ['tasks.update', $task->id], 'method' => 'put']) !!}
+        
+        {!! Form::label('status', 'ステータス:') !!}
+        {!! Form::select('status', ['未着手'=>'未着手', '着手'=>'着手', '完了'=>'完了']) !!}
 
         {!! Form::label('content', 'タスク:') !!}
         {!! Form::text('content') !!}
